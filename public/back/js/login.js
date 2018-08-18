@@ -82,17 +82,4 @@ $(function () {
     $('#form').data('bootstrapValidator').resetForm();
   })
 
-  /**
-   *
-   * nprogress
-   * */
-
-  $(document).ajaxStart(function () {
-    NProgress.start();
-  })
-
-  $(document).ajaxStop(function () {
-    NProgress.done();
-  })
-
 })
