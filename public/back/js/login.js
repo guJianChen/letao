@@ -1,4 +1,9 @@
 $(function () {
+  /**
+   *
+   * 规则校验
+   *
+   */
   $('#form').bootstrapValidator({
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
@@ -38,4 +43,56 @@ $(function () {
       }
     }
   })
+
+  /**
+   *
+   * 阻止默认事件
+   *
+   * */
+  $('#form').on('success.form.bv', function (e) {
+    e.preventDefault();
+    console.log('阻止了默认行为');
+    $.ajax({
+      type: 'post',
+      data: $('#form').serialize(),
+      url: '/employee/employeeLogin',
+      dataType: 'json',
+      success: function (info) {
+        console.log(info);
+
+        if (info.success) {
+          location.href = "index.html";
+        }
+        if (info.error === 1000) {
+          $('#form').data('bootstrapValidator').updateStatus('username', 'INVALID', 'callback');
+
+        }
+        if (info.error === 1001) {
+          $('#form').data('bootstrapValidator').updateStatus('password', 'INVALID', 'callback');
+        }
+      }
+
+    })
+  })
+  /**
+   * 修复resetbug
+   * */
+  $('[type="reset"]').click(function () {
+    console.log(111);
+    $('#form').data('bootstrapValidator').resetForm();
+  })
+
+  /**
+   *
+   * nprogress
+   * */
+
+  $(document).ajaxStart(function () {
+    NProgress.start();
+  })
+
+  $(document).ajaxStop(function () {
+    NProgress.done();
+  })
+
 })
