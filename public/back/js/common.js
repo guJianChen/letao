@@ -42,10 +42,10 @@ $(function () {
   })
 
   $('.icon_logout').click(function () {
-    $('.modal').modal("show");
+    $('#logout').modal("show");
   })
 
-  $('.btn-logout').click(function () {
+  $('#btn-logout').click(function () {
     $.ajax({
       url: '/employee/employeeLogout',
       dataType: 'json',
