@@ -42,10 +42,10 @@ $(function () {
   })
 
   $('.icon_logout').click(function () {
-    $('.modal').modal("show");
+    $('#logout').modal("show");
   })
 
-  $('.btn-logout').click(function () {
+  $('#btn-logout').click(function () {
     $.ajax({
       url: '/employee/employeeLogout',
       dataType: 'json',
@@ -57,21 +57,5 @@ $(function () {
       }
     })
   })
-
-  // $.ajax({
-  //   url: '/employee/checkRootLogin',
-  //   type: 'get',
-  //   dataType: 'json',
-  //   success: function ( info ) {
-  //     console.log(info);
-  //     if(info.success) {
-  //       console.log('登陆了');
-  //     }
-  //     if(info.error === 400 ){
-  //       location.href = 'login.html';
-  //     }
-  //   }
-  // })
-
 
 })
