@@ -21,7 +21,7 @@
     </div>
     <div class="nav">
       <ul>
-        <li><a class="current" href="user.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
+        <li><a href="user.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
         <li><a id="cate" href="javascript:;"><i class="glyphicon glyphicon-list"></i> 分类管理</a>
             <div id="child" class="child" style="display: none">
               <a href="first.html">一级分类</a>
@@ -40,11 +40,22 @@
     <div class="lt_fluid">
       <div class="container-fluid">
         <ol class="breadcrumb">
-          <li><a href="#">系统管理</a></li>
+          <li><a href="index.html">系统管理</a></li>
           <li class="active">首页</li>
         </ol>
+        <div class="lt_echarts">
+          <div class="col-xs-6">
+            <div class="pull-left" id="main" style="width: 813px;height:400px;"></div>
+          </div>
+          <div class="col-xs-6">
+            <div class="pull-right" id="second" style="width: 813px;height:400px;"></div>
+          </div>
+
+        </div>
       </div>
     </div>
+
+
   </div>
 </div>
 <div class="modal fade">
@@ -69,6 +80,9 @@
 <script src='./lib/jquery/jquery.min.js'></script>
 <script src='./lib/bootstrap/js/bootstrap.min.js'></script>
 <script src='./lib/nprogress/nprogress.js'></script>
+<script src='./lib/echarts/echarts.min.js'></script>
 <script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
+
 </body>
 </html>

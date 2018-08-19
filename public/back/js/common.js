@@ -38,6 +38,7 @@ $(function () {
   $('.icon_menu').click(function () {
     $('.lt_aside').toggleClass('out');
     $('.lt_main').toggleClass('out');
+    $('.lt_topbar').toggleClass('out');
   })
 
   $('.icon_logout').click(function () {
