@@ -126,6 +126,12 @@ ul {
 .lt_main .lt_fluid .breadcrumb {
   margin-top: 20px;
 }
+.lt_main .lt_fluid .table,
+.lt_main .lt_fluid th,
+.lt_main .lt_fluid td {
+  text-align: center;
+  vertical-align: middle;
+}
 .lt_main.out {
   padding-left: 0;
 }
